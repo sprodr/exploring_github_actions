@@ -3,12 +3,12 @@
 
 module.exports = function (config) {
   config.set({
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
+    browsers: ['HeadlessChrome'],
     customLaunchers: {
-      ChromeHeadlessCI: {
+      HeadlessChrome: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
-      }
+        flags: ['--no-sandbox', '--disable-setuid-sandbox'],
+      },
     },
   });
 };
