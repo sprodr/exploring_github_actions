@@ -4,11 +4,12 @@
 module.exports = function (config) {
   config.set({
     browsers: ['HeadlessChrome'],
+    restartOnFileChange: true,
     customLaunchers: {
-      HeadlessChrome: {
+      ChromeHeadlessCustom: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-setuid-sandbox'],
-      },
+        flags: ['--no-sandbox', '--disable-gpu']
+      }
     },
   });
 };
